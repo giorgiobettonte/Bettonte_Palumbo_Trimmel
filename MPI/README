@@ -1,1 +1,13 @@
+MPI version.
 
+Modules to load:
+  module load intel
+
+To compile:
+  mpicxx -O2 -o mpi mpi.cpp
+
+To run:
+  sbatch mpi_job.sh
+
+To see execution:
+  cat slurm-<job_number>.out
