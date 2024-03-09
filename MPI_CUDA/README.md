@@ -1,14 +1,22 @@
-#MPI combined with Cuda.
+  # MPI combined with Cuda.
 
-Modules to load: 
-  module load intel
-  module load CUDA/12
+## Modules to load: 
+```bash
+$  module load intel
+$  module load CUDA/12
+```
 
-#To compile:
-  nvcc -ccbin=mpicxx -O2 -o mpi_cuda src/mpi_cuda.cpp -lcublas
+## Compile
+```bash
+ $ nvcc -ccbin=mpicxx -O2 -o mpi_cuda src/mpi_cuda.cpp -lcublas
+```
 
-#To run:
-  sbatch mpicuda_job.sh
+## Run:
+```bash
+ $  sbatch mpicuda_job.sh
+```
 
-#To see execution:
-  cat slurm-<job_number>.out
+## To see execution:
+```bash
+$ cat slurm-<job_number>.out
+```
