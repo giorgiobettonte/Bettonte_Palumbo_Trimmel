@@ -1,6 +1,5 @@
 
 
-
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -97,7 +96,7 @@ int main(int argc, char ** argv)
     if(convergence == true)
     {
         MPI_File file;MPI_Status status;
-        MPI_File_open(MPI_COMM_WORLD, "io/sol_openmpi.bin", MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &file);
+        MPI_File_open(MPI_COMM_WORLD, "../io/sol_openmpi.bin", MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &file);
         MPI_File_write(file, &total_rows_rhs, 1, MPI_UNSIGNED, &status); total_rows_rhs = 1;
         MPI_File_write(file, &total_rows_rhs, 1, MPI_UNSIGNED, &status);
         if(total_rows_matrix % mpi_size != 0)
