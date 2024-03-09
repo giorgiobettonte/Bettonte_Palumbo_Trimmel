@@ -1,13 +1,14 @@
-MPI version.
+# Conjugate Gradient with MPI
+```bash
+$ module load intel 
+```
 
-Modules to load:
-  module load intel
+## Compile
+```bash
+$ mpicxx -O2 -o mpi mpi.cpp
+```
 
-To compile:
-  mpicxx -O2 -o mpi mpi.cpp
-
-To run:
-  sbatch mpi_job.sh
-
-To see execution:
-  cat slurm-<job_number>.out
+## Run
+Modify the Makefile to include the desired matrix and rhs. Then:
+```bash
+$ mpiexec -n 4 ./cg_mpi
