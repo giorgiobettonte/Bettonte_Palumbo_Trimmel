@@ -14,7 +14,7 @@ module load intel
 module load  NVHPC/23.7-CUDA-12.2.0
 
 # Compile code
-nvcc -O2 cg_openacc.cpp -o cg_openacc
+nvc++ -fast -Minfo=all -acc cg_openacc.cpp -o cg_openacc
 
 # Run Code
 srun -n "${SLURM_NTASKS}" ./cg_openacc ../io/matrix.bin ../io/rhs.bin ../io/sol.bin
